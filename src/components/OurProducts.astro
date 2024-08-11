@@ -1,0 +1,45 @@
+---
+import Card from "./Card.astro";
+import Divider from "./Divider.astro";
+
+const IMAGE_PATH = "/img";
+
+const products = [
+  {
+    id: 1,
+    productName: "Pan",
+    imgSrc: `${IMAGE_PATH}/pan.png`,
+  },
+  {
+    id: 2,
+    productName: "Pan con semillas",
+    imgSrc: `${IMAGE_PATH}/pan-semillas.png`,
+  },
+  {
+    id: 3,
+    productName: "Yogurt Griego",
+    imgSrc: `${IMAGE_PATH}/yogurt-griego.png`,
+  },
+  {
+    id: 4,
+    productName: "Budines",
+    imgSrc: `${IMAGE_PATH}/budin.png`,
+  },
+];
+---
+
+<section
+  class="bg-secondary-500 min-h-72 flex flex-col items-center gap-y-4 p-4"
+>
+  <h3 class="mt-5 uppercase text-lg md:text-xl lg:text-2xl xl:text-3xl">
+    Nuestros productos
+  </h3>
+  <Divider dividerBackground="#c4c49a" />
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {
+      products.map((product) => (
+        <Card title={product.productName} imgSrc={product.imgSrc} />
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+
+---
+
+<style>
+  .overlay {
+    border-image: fill 1
+      linear-gradient(hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0.7));
+  }
+
+  .hero {
+    background-image: url("/img/yogurt-header.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-block-size: 60vh;
+    place-content: center;
+    text-align: center;
+  }
+</style>
+
+<header class="hero overlay">
+  <div class="flex flex-col items-center gap-y-4">
+    <img
+      class="size-36 sm:size-44 md:size-48 hover:scale-105 transition-transform duration-300 ease-in-out lg:size-56 xl:size-60 cursor-pointer"
+      src="/img/logo-bohemian-sin-fondo.webp"
+      alt="Logo de Bohemian"
+    />
+    <h1
+      class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white"
+    >
+      Tu <span class="font-bold">Yogurt</span> preferido <br />
+      <span class="italic">siempre cerca</span>
+    </h1>
+    <button
+      class="bg-primary-500 p-2 rounded-md text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-inter hover:bg-primary-400"
+    >
+      Comunicaté
+    </button>
+  </div>
+</header>
