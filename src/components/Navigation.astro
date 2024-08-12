@@ -1,0 +1,17 @@
+---
+interface Props {
+  links: { href: string; text: string }[];
+}
+
+const { links } = Astro.props;
+---
+
+<ul class="text-sm md:text-lg navegation-links">
+  {
+    links.map((link) => (
+      <li>
+        <a href={link.href}>{link.text}</a>
+      </li>
+    ))
+  }
+</ul>

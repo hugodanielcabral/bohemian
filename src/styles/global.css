@@ -27,3 +27,75 @@ html {
   color: white;
   font-family: "Messapia", sans-serif;
 }
+
+.header {
+  width: 100%;
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  transition: background-color ease-in-out 0.5s;
+}
+
+.navegation {
+  display: flex;
+  align-items: center;
+}
+
+.navegation-links {
+  align-self: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  display: none;
+}
+
+.navegation-links a {
+  display: block;
+
+  color: white;
+  text-decoration: none;
+}
+
+.navegation-links a:hover,
+.navegation-links a:focus {
+  text-decoration: underline;
+  color: #beb6b6;
+}
+
+.hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: #c4c49a;
+}
+
+.expanded {
+  display: flex;
+}
+
+.header-scrolled {
+  background-color: #072427;
+}
+
+@media screen and (min-width: 636px) {
+  .navegation-links {
+    align-self: center;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}

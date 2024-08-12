@@ -1,0 +1,17 @@
+---
+
+---
+
+<div class="hamburger">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</div>
+
+<script>
+  const $menu = document.querySelector(".hamburger") as HTMLElement;
+
+  $menu?.addEventListener("click", () => {
+    document.querySelector(".navegation-links")?.classList.toggle("expanded");
+  });
+</script>
