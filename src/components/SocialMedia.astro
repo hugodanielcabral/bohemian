@@ -1,0 +1,28 @@
+---
+const socialMedia = [
+  { name: "instagram", url: "https://instagram.com/" },
+  { name: "whatsapp", url: "https://whatsapp.com/" },
+];
+---
+
+<style>
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+</style>
+
+<div class="social-media mb-10">
+  {
+    socialMedia.map((social) => (
+      <a href={social.url}>
+        <img
+          src={`/img/${social.name}.webp`}
+          alt={social.name}
+          class="size-12 hover:scale-110 transition-transform duration-300 ease-in-out"
+        />
+      </a>
+    ))
+  }
+</div>
