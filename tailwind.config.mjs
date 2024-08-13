@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        messapia: ["Messapia", "sans-serif"],
+        sourceSerif: ["SourceSerif", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
       },
       colors: {
         primary: {

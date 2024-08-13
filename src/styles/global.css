@@ -1,22 +1,30 @@
 @font-face {
-  font-family: "Messapia";
-  src: url("/fonts/Messapia-Regular.woff2") format("woff2");
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter-Regular.woff2") format("woff2");
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter-Bold.woff2") format("woff2");
+  font-family: "SourceSerif";
+  src: url("/fonts/SourceSerif4-Regular.ttf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SourceSerif";
+  src: url("/fonts/SourceSerif4-Bold.ttf.woff2") format("woff2");
   font-weight: 700;
   font-style: bold;
   font-display: swap;
@@ -25,7 +33,7 @@
 html {
   background-color: #ffffff;
   color: white;
-  font-family: "Messapia", sans-serif;
+  font-family: "SourceSerif", sans-serif;
 }
 
 .header {
@@ -54,8 +62,7 @@ html {
 
 .navegation-links a {
   display: block;
-
-  color: white;
+  color: #c4c49a;
   text-decoration: none;
 }
 

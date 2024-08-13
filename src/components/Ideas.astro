@@ -45,29 +45,29 @@ const productIdeas = [
   <Divider dividerBackground="#0d393c" />
 
   <div class="grid-cols-1 md:grid-cols-3 grid gap-4">
-    <article class="space-y-4">
+    <article class="space-y-8">
       {
         productIdeas.slice(0, 2).map((idea) => (
           <section>
-            <h4 class="text-base md:text-lg uppercase text-secondary-500 font-bold font-inter">
+            <h4 class="text-base md:text-lg uppercase text-secondary-500 font-bold font-oswald">
               {idea.title}
             </h4>
-            <p class="text-xs md:text-sm text-secondary-600 font-inter text-pretty">
+            <p class="text-sm md:text-lg text-secondary-600 font-oswald text-pretty">
               {idea.description}
             </p>
           </section>
         ))
       }
     </article>
-    <img src="/img/yogurt-ideas.jpg" alt="" class="rounded-md" width="500px" />
-    <article class="space-y-4">
+    <img src="/img/yogurt-ideas.jpg" alt="" class="rounded-md" />
+    <article class="space-y-8">
       {
         productIdeas.slice(2).map((idea) => (
           <section>
-            <h4 class="text-base md:text-lg uppercase text-secondary-500 font-bold font-inter">
+            <h4 class="text-base md:text-lg uppercase text-secondary-500 font-bold font-oswald">
               {idea.title}
             </h4>
-            <p class="text-xs md:text-sm text-secondary-600 font-inter text-pretty">
+            <p class="text-sm md:text-lg text-secondary-600 font-oswald text-pretty">
               {idea.description}
             </p>
           </section>
