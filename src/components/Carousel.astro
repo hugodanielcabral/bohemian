@@ -1,0 +1,114 @@
+---
+
+---
+
+<style>
+  .slider-container {
+    position: relative;
+    height: 50vh;
+  }
+
+  .slider {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    height: 100%;
+  }
+
+  .slide {
+    flex: 0 0 auto;
+    width: 100%;
+    object-fit: cover;
+    border-image: fill 1
+      linear-gradient(hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0.7));
+  }
+
+  .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  #next {
+    right: 10px;
+  }
+
+  #prev {
+    left: 10px;
+  }
+</style>
+
+<div class="slider-container">
+  <div class="slider">
+    <div
+      class="slide bg-[url('/img/hero-1.webp')] flex items-center justify-center"
+    >
+      <h1
+        class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white"
+      >
+        Tu <span class="font-bold text-primary-400">pan</span> preferido <br />
+        <span class="italic">siempre cerca</span>
+      </h1>
+    </div>
+    <div
+      class="slide bg-[url('/img/hero-2.webp')] flex items-center justify-center"
+    >
+      <h1
+        class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white"
+      >
+        Tu <span class="font-bold text-primary-400">yogurt</span> preferido <br
+        />
+        <span class="italic">siempre cerca</span>
+      </h1>
+    </div>
+    <button class="button size-14 sm:size-16 md:size-20" id="next"
+      ><img
+        src="/img/right-arrow.webp"
+        alt="Botón derecho del Carrusel"
+      /></button
+    >
+    <button class="button size-14 sm:size-16 md:size-20" id="prev"
+      ><img
+        src="/img/left-arrow.webp"
+        alt="Botón izquierdo del Carrusel"
+      /></button
+    >
+  </div>
+
+  <script>
+    const $slider = document.querySelector(".slider") as HTMLElement;
+    const $slides = document.querySelectorAll(
+      ".slide"
+    ) as NodeListOf<HTMLElement>;
+    const $nextButton = document.getElementById("next") as HTMLElement;
+    const $prevButton = document.getElementById("prev") as HTMLElement;
+
+    let currentIndex = 0;
+
+    const updateSliderPosition = (direction: number) => {
+      const currentImgWidth = $slides[0].clientWidth;
+      $slider.scrollBy({
+        left: direction * currentImgWidth,
+        behavior: "smooth",
+      });
+    };
+
+    $nextButton.addEventListener("click", () => {
+      if (currentIndex < $slides.length - 1) {
+        currentIndex++;
+        updateSliderPosition(1);
+      }
+    });
+
+    $prevButton.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSliderPosition(-1);
+      }
+    });
+  </script>
+</div>
