@@ -31,9 +31,15 @@
 }
 
 html {
-  background-color: #ffffff;
+  background-color: #0d393c;
   color: white;
   font-family: "SourceSerif", sans-serif;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 .header {
