@@ -9,13 +9,23 @@ const yogurts = [
     type: "Griego",
     image: "/img/yogurt-griego.png",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ea, quisquam incidunt eligendi maxime perspiciatis vero rerum, molestias ipsam inventore tenetur hic modi harum cupiditate mollitia voluptas odit culpa laborum?",
+      "Delicioso yogur griego especial para acompañar tus desayunos o meriendas. ¡No te lo pierdas!",
+    info: [
+      {
+        title: "Presentación",
+        description: "Envase de 1 kg.",
+      },
+      {
+        title: "Precio",
+        description: "$4000",
+      },
+    ],
   },
 ];
 ---
 
 <Layout title="Yogures - Bohemian - Coffee & Breads">
-  <ProductHero title="Yogures" image="/img/panes.webp" />
+  <ProductHero title="Yogures" image="/img/yogures-hero.webp" />
   <div
     class="grid grid-cols-1 md:grid-cols-2 mx-auto gap-4 bg-primary-500 p-10"
   >
@@ -25,6 +35,7 @@ const yogurts = [
           title={yogurt.type}
           image={yogurt.image}
           description={yogurt.description}
+          info={yogurt.info}
         />
       ))
     }

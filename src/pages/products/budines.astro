@@ -8,41 +8,78 @@ const puddings = [
   {
     type: "Zanahoria",
     image: "/img/yogurt-griego.png",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ea, quisquam incidunt eligendi maxime perspiciatis vero rerum, molestias ipsam inventore tenetur hic modi harum cupiditate mollitia voluptas odit culpa laborum?",
+    description: "Budín de zanahoria con nueces. ¡Una delicia!",
+    info: [
+      {
+        title: "Presentación",
+        description: ".",
+      },
+      {
+        title: "Precio",
+        description: "$3500",
+      },
+    ],
   },
   {
     type: "Naranaja",
     image: "/img/yogurt-griego.png",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ea, quisquam incidunt eligendi maxime perspiciatis vero rerum, molestias ipsam inventore tenetur hic modi harum cupiditate mollitia voluptas odit culpa laborum?",
+    description: "¿Quién puede resistirse a un budín de naranja? ¡Nadie!",
+    info: [
+      {
+        title: "Presentación",
+        description: ".",
+      },
+      {
+        title: "Precio",
+        description: "$3500",
+      },
+    ],
   },
   {
     type: "Limón",
     image: "/img/yogurt-griego.png",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ea, quisquam incidunt eligendi maxime perspiciatis vero rerum, molestias ipsam inventore tenetur hic modi harum cupiditate mollitia voluptas odit culpa laborum?",
+      "El budín de limón es un clásico que no puede faltar en tu mesa.",
+    info: [
+      {
+        title: "Presentación",
+        description: ".",
+      },
+      {
+        title: "Precio",
+        description: "$3500",
+      },
+    ],
   },
   {
     type: "Chocolate",
     image: "/img/yogurt-griego.png",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ea, quisquam incidunt eligendi maxime perspiciatis vero rerum, molestias ipsam inventore tenetur hic modi harum cupiditate mollitia voluptas odit culpa laborum?",
+      "Chocolate y budín, una combinación que no puede fallar. ¡Pruébalo!",
+    info: [
+      {
+        title: "Presentación",
+        description: ".",
+      },
+      {
+        title: "Precio",
+        description: "$3500",
+      },
+    ],
   },
 ];
 ---
 
 <Layout title="Budines - Bohemian - Coffee & Breads">
-  <ProductHero title="Budines" image="/img/panes.webp" />
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 mx-auto gap-4 bg-primary-500 p-10"
-  >
+  <ProductHero title="Budines" image="/img/budin-hero.webp" />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-primary-500 p-10">
     {
       puddings.map((pudding) => (
         <ProductCard
           title={pudding.type}
           image={pudding.image}
           description={pudding.description}
+          info={pudding.info}
         />
       ))
     }
