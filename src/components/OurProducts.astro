@@ -9,16 +9,19 @@ const products = [
     id: 1,
     productName: "Panes",
     imgSrc: `${IMAGE_PATH}/pan.png`,
+    link: "/products/panes",
   },
   {
     id: 2,
     productName: "Yogures",
     imgSrc: `${IMAGE_PATH}/yogurt-griego.png`,
+    link: "/products/yogures",
   },
   {
     id: 3,
     productName: "Budines",
     imgSrc: `${IMAGE_PATH}/budin.png`,
+    link: "/products/budines",
   },
 ];
 ---
@@ -33,7 +36,9 @@ const products = [
   <div class="grid grid-cols-3 gap-4">
     {
       products.map((product) => (
-        <Card title={product.productName} imgSrc={product.imgSrc} />
+        <a href={product.link}>
+          <Card title={product.productName} imgSrc={product.imgSrc} />
+        </a>
       ))
     }
   </div>
