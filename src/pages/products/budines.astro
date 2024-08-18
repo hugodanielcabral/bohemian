@@ -1,0 +1,51 @@
+---
+import OurProducts from "../../components/OurProducts.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import ProductHero from "../../components/ProductHero.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const puddings = [
+  {
+    type: "Zanahoria",
+    image: "/img/yogurt-griego.png",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ea, quisquam incidunt eligendi maxime perspiciatis vero rerum, molestias ipsam inventore tenetur hic modi harum cupiditate mollitia voluptas odit culpa laborum?",
+  },
+  {
+    type: "Naranaja",
+    image: "/img/yogurt-griego.png",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ea, quisquam incidunt eligendi maxime perspiciatis vero rerum, molestias ipsam inventore tenetur hic modi harum cupiditate mollitia voluptas odit culpa laborum?",
+  },
+  {
+    type: "Limón",
+    image: "/img/yogurt-griego.png",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ea, quisquam incidunt eligendi maxime perspiciatis vero rerum, molestias ipsam inventore tenetur hic modi harum cupiditate mollitia voluptas odit culpa laborum?",
+  },
+  {
+    type: "Chocolate",
+    image: "/img/yogurt-griego.png",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, ea, quisquam incidunt eligendi maxime perspiciatis vero rerum, molestias ipsam inventore tenetur hic modi harum cupiditate mollitia voluptas odit culpa laborum?",
+  },
+];
+---
+
+<Layout title="Budines - Bohemian - Coffee & Breads">
+  <ProductHero title="Budines" image="/img/panes.webp" />
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 mx-auto gap-4 bg-primary-500 p-10"
+  >
+    {
+      puddings.map((pudding) => (
+        <ProductCard
+          title={pudding.type}
+          image={pudding.image}
+          description={pudding.description}
+        />
+      ))
+    }
+  </div>
+  <OurProducts currentProduct="Budines" />
+</Layout>
