@@ -5,21 +5,21 @@ import Hamburger from "./Hamburger.astro";
 
 const links = [
   { href: "/", text: "Inicio" },
-  { href: "/about", text: "Productos" },
   { href: "/contact", text: "Contacto" },
 ];
 ---
 
 <header class="header">
   <nav class="navegation">
+    <Logo />
     <Hamburger />
     <Navigation links={links} />
   </nav>
 </header>
 
 <script>
-  let $heroElement = document.querySelector(".slider-container") as HTMLElement;
-  let $headerElement = document.querySelector(".header") as HTMLElement;
+  let $wrapper = document.querySelector(".wrapper") as HTMLElement;
+  let $header = document.querySelector(".header") as HTMLElement;
 
   let observerOptions = {
     root: null,
@@ -28,13 +28,9 @@ const links = [
 
   let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        $headerElement?.classList.remove("header-scrolled");
-      } else {
-        $headerElement?.classList.add("header-scrolled");
-      }
+      $header?.classList.toggle("header-scrolled", !entry.isIntersecting);
     });
   }, observerOptions);
 
-  observer.observe($heroElement);
+  observer.observe($wrapper);
 </script>
