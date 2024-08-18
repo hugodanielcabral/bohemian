@@ -12,6 +12,7 @@ const { imgSrc, title } = Astro.props;
 >
   <img src={imgSrc} alt={title} width="300px" height="350px" />
   <div
+    id="product-card"
     class="absolute top-0 bottom-0 bg-black bg-opacity-75 md:opacity-0 group-hover:opacity-100 w-full flex items-center justify-center ease-in-out duration-300"
   >
     <h3
