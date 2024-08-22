@@ -1,0 +1,39 @@
+---
+interface Props {
+  screenshots: {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+  }[];
+}
+
+const { screenshots } = Astro.props;
+---
+
+<div
+  class="pswp-gallery pswp-gallery--single-column grid grid-cols-2 gap-2 max-w-xl"
+  id="gallery--products"
+>
+  {
+    screenshots.map((screenshot) => (
+      <a
+        href={screenshot.src}
+        data-pswp-width={screenshot.width}
+        data-pswp-height={screenshot.height}
+        target="_blank"
+        class="first:col-span-2 hover:scale-105 transform transition-transform duration-300"
+      >
+        <img
+          src={screenshot.src}
+          alt={screenshot.alt}
+          class="rounded-md border border-gray-400 shadow-md"
+        />
+      </a>
+    ))
+  }
+</div>
+
+<script>
+  import "../scripts/photoswipe.js";
+</script>
