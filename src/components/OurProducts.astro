@@ -2,33 +2,10 @@
 import Card from "./Card.astro";
 import Divider from "./Divider.astro";
 import productItems from "../data/productItems";
-
-const IMAGE_PATH = "/img";
-
-const products = [
-  {
-    id: 1,
-    productName: "Panes",
-    imgSrc: `${IMAGE_PATH}/pan.png`,
-    link: "/products/panes",
-  },
-  {
-    id: 2,
-    productName: "Yogures",
-    imgSrc: `${IMAGE_PATH}/yogurt-griego.png`,
-    link: "/products/yogures",
-  },
-  {
-    id: 3,
-    productName: "Budines",
-    imgSrc: `${IMAGE_PATH}/budin.png`,
-    link: "/products/budines",
-  },
-];
 ---
 
 <section
-  class="bg-secondary-500 min-h-72 flex flex-col items-center gap-y-4 p-4 pb-10 overflow-auto"
+  class="bg-secondary-500 min-h-72 flex flex-col items-center gap-y-4 p-4 pb-10 overflow-auto mb-4"
 >
   <h3 class="mt-5 uppercase text-lg md:text-xl lg:text-2xl xl:text-3xl">
     Nuestros productos 🔥
@@ -37,14 +14,9 @@ const products = [
   <div class="flex gap-4">
     {
       productItems.map((product) => (
-        <div class="space-y-2">
-          <a href={`/products/${product.productName}`}>
-            <Card title={product.title} imgSrc={product.screenshots[0].src} />
-          </a>
-          <h3 class="text-center font-oswald text-sm text-pretty md:text-xl lg:text-2xl">
-            {product.title}
-          </h3>
-        </div>
+        <a href={`/products/${product.productName}`}>
+          <Card title={product.title} imgSrc={product.screenshots[0].src} />
+        </a>
       ))
     }
   </div>

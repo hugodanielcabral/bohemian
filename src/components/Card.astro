@@ -8,17 +8,19 @@ const { imgSrc, title } = Astro.props;
 ---
 
 <div
-  class="bg-primary-400 rounded-md w-28 h-32 lg:w-52 lg:h-56 xl:w-60 xl:h-64 relative place-content-center group border-2 border-primary-500 shadow-md shadow-black"
+  class="bg-primary-400 rounded-md w-28 h-32 lg:w-52 lg:h-56 xl:w-60 xl:h-64 relative place-content-center space-y-2"
 >
-  <img src={imgSrc} alt={title} width="300px" height="350px" />
-  <div
-    id="product-card"
-    class="absolute top-0 bottom-0 bg-black bg-opacity-75 md:opacity-0 group-hover:opacity-100 w-full flex items-center justify-center ease-in-out duration-300"
+  <img
+    src={imgSrc}
+    alt={title}
+    width="300px"
+    height="350px"
+    class="h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out border-2 border-primary-500 shadow-md shadow-black rounded-md"
+  />
+
+  <h3
+    class="text-primary-400 text-xs sm:text-sm md:text-base lg:text-xl text-pretty text-center xl:text-2xl font-oswald"
   >
-    <h3
-      class="text-primary-400 text-xs sm:text-sm md:text-base lg:text-xl text-pretty text-center xl:text-2xl font-oswald"
-    >
-      {title}
-    </h3>
-  </div>
+    {title}
+  </h3>
 </div>
