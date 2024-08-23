@@ -1,6 +1,7 @@
 const productItems = [
   {
     id: 1,
+    category: "panes",
     productName: "pan de campo",
     title: "Pan de Campo",
     hero: "/img/pan-hero.webp",
@@ -39,6 +40,7 @@ const productItems = [
   },
   {
     id: 2,
+    category: "panes",
     productName: "pan de semillas",
     title: "Pan de Semillas",
     hero: "/img/pan-hero.webp",
@@ -71,6 +73,7 @@ const productItems = [
   },
   {
     id: 3,
+    category: "yogures",
     productName: "yogurt griego",
     title: "Yogurt Griego",
     hero: "/img/yogurt-hero.png",

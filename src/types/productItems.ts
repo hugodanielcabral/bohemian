@@ -1,4 +1,6 @@
 export interface ProductItemsProps {
+    id: number;
+    category: string;
     productName: string;
     title: string;
     description: string;
