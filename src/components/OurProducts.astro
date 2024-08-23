@@ -1,14 +1,9 @@
 ---
 import Card from "./Card.astro";
 import Divider from "./Divider.astro";
-
-interface Props {
-  currentProduct?: string;
-}
+import productItems from "../data/productItems";
 
 const IMAGE_PATH = "/img";
-
-const { currentProduct } = Astro.props;
 
 const products = [
   {
@@ -33,7 +28,7 @@ const products = [
 ---
 
 <section
-  class="bg-secondary-500 min-h-72 flex flex-col items-center gap-y-4 p-4 pb-10"
+  class="bg-secondary-500 min-h-72 flex flex-col items-center gap-y-4 p-4 pb-10 overflow-auto"
 >
   <h3 class="mt-5 uppercase text-lg md:text-xl lg:text-2xl xl:text-3xl">
     Nuestros productos 🔥
@@ -41,15 +36,16 @@ const products = [
   <Divider dividerBackground="#c4c49a" />
   <div class="flex gap-4">
     {
-      products
-        .filter(
-          (filteredProduct) => filteredProduct.productName !== currentProduct
-        )
-        .map((product) => (
-          <a href={product.link}>
-            <Card title={product.productName} imgSrc={product.imgSrc} />
+      productItems.map((product) => (
+        <div class="space-y-2">
+          <a href={`/products/${product.productName}`}>
+            <Card title={product.title} imgSrc={product.screenshots[0].src} />
           </a>
-        ))
+          <h3 class="text-center font-oswald text-sm text-pretty md:text-xl lg:text-2xl">
+            {product.title}
+          </h3>
+        </div>
+      ))
     }
   </div>
 </section>
