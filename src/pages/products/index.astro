@@ -1,0 +1,68 @@
+---
+import Divider from "../../components/Divider.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import ProductHero from "../../components/ProductHero.astro";
+import Layout from "../../layouts/Layout.astro";
+const pageTitle = "Productos";
+const dividerBackground = "#0d393c";
+---
+
+<Layout title={pageTitle}>
+  <ProductHero title="Nuestros productos" />
+  <div class="bg-primary-500 space-y-4 p-4">
+    <h2 class="font-oswald text-3xl text-secondary-500 text-center uppercase">
+      Panes
+    </h2>
+    <Divider dividerBackground={dividerBackground} />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <ProductCard
+        title="Pan de campo"
+        description="Pan de campo con semillas de girasol y lino."
+        image="/images/pan-de-centeno.jpg"
+        url="/products/pan de campo"
+      />
+      <ProductCard
+        title="Pan de semillas"
+        description="Pan de espelta con semillas de chía y sésamo."
+        image="/images/pan-de-espelta.jpg"
+        url="/products/pan de semillas"
+      />
+    </div>
+    <h2 class="font-oswald text-3xl text-secondary-500 text-center uppercase">
+      Yogures
+    </h2>
+    <Divider dividerBackground={dividerBackground} />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <ProductCard
+        title="Yogurt Griego"
+        description="Pan de campo con semillas de girasol y lino."
+        image="/images/pan-de-centeno.jpg"
+        url="/products/yogurt griego"
+      />
+    </div>
+    <h2 class="font-oswald text-3xl text-secondary-500 text-center uppercase">
+      Budines
+    </h2>
+    <Divider dividerBackground={dividerBackground} />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <ProductCard
+        title="Budín de limón"
+        description="Pan de campo con semillas de girasol y lino."
+        image="/images/pan-de-centeno.jpg"
+        url="/products/budin de limon"
+      />
+      <ProductCard
+        title="Budín de naranja"
+        description="Pan de campo con semillas de girasol y lino."
+        image="/images/pan-de-centeno.jpg"
+        url="/products/budin de naranja"
+      />
+      <ProductCard
+        title="Budín de zanahoria"
+        description="Pan de campo con semillas de girasol y lino."
+        image="/images/pan-de-centeno.jpg"
+        url="/products/budin de zanahoria"
+      />
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,59 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProductHero from "../../components/ProductHero.astro";
+import ProductList from "../../components/ProductList.astro";
+import Gallery from "../../components/Gallery.astro";
+import productItems from "../../data/productItems.ts";
+import type { GetStaticPaths } from "astro";
+import type { ProductItemsProps } from "../../types/productItems.ts";
+
+export const getStaticPaths = (() => {
+  return productItems.map((product: ProductItemsProps) => {
+    return {
+      params: {
+        product: product.productName,
+      },
+      props: { productItem: product },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { product } = Astro.params;
+const { productItem } = Astro.props;
+const pageTitle = `${product.toUpperCase()} - Bohemian - Coffee & Breads`;
+---
+
+<Layout title=`${pageTitle} - Bohemian - Coffee & Breads`>
+  <ProductHero title={productItem.title} />
+  <div class="bg-primary-500 p-4 flex md:flex-row flex-col gap-2 relative">
+    <Gallery screenshots={productItem.screenshots} />
+    <div
+      class="space-y-4 bg-secondary-500 p-2 rounded-md border-2 border-gray-400"
+    >
+      <h3
+        class="text-pretty text-sm md:text-lg lg:text-xl xl:text-2xl italic text-primary-500 font-oswald text-center"
+      >
+        Descripción del producto
+      </h3>
+      <p
+        class="text-pretty text-xl md:text-2xl lg:text-3xl xl:text-4xl font-oswald"
+      >
+        {productItem.description}
+      </p>
+
+      <h3
+        class="text-pretty text-sm md:text-lg lg:text-xl xl:text-2xl italic text-primary-500 font-oswald text-center"
+      >
+        Información del producto
+      </h3>
+      <ul class="space-y-2">
+        {
+          productItem.info &&
+            productItem.info.map((info) => (
+              <ProductList title={info.title} description={info.description} />
+            ))
+        }
+      </ul>
+    </div>
+  </div>
+</Layout>
