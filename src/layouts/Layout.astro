@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "./src/styles/global.css";
 import WhatsAppInfo from "../components/WhatsAppInfo.astro";
+import ViewTransitions from "astro/components/ViewTransitions.astro";
 
 interface Props {
   title: string;
@@ -24,10 +25,12 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+  <ViewTransitions />
   <body>
     <Header />
     <slot />
     <WhatsAppInfo />
     <Footer />
   </body>
+
 </html>
