@@ -18,6 +18,7 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.14",
     "@types/photoswipe": "^4.1.6"
   }
 }
