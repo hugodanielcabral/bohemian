@@ -1,4 +1,5 @@
 ---
+import type { GetStaticPaths } from "astro";
 import BlogCard from "../../components/BlogCard.astro";
 import BlogSelect from "../../components/BlogSelect.astro";
 import ProductHero from "../../components/ProductHero.astro";
@@ -33,12 +34,13 @@ const blogCategories = [
   },
 ];
 const posts = await Astro.glob<Frontmatter>("./posts/*.md");
+
 const pageTitle = "Blog - Bohemian - Coffee & Breads";
 ---
 
 <Layout title={pageTitle}>
-  <ProductHero title="Blog" />
-  <section class="bg-primary-500 p-4">
+  <ProductHero title="Blog" imgSrc="/img/blog-hero.webp" />
+  <section class="bg-primary-500 p-4 min-h-[800px]">
     <h2
       class="text-center text-lg md:text-2xl lg:text-3xl xl:text-4xl font-oswald text-secondary-500 col-span-full"
     >
@@ -64,31 +66,7 @@ const pageTitle = "Blog - Bohemian - Coffee & Breads";
 </Layout>
 
 <script>
-  const handleOnSelectChange = () => {
-    const $categorySelect = document.getElementById(
-      "blog-category"
-    ) as HTMLSelectElement;
-
-    $categorySelect?.addEventListener("change", (e: Event) => {
-      const selectedCategory = (e.target as HTMLSelectElement).value;
-
-      filterByCategory(selectedCategory);
-    });
-  };
-
-  const filterByCategory = (category: string) => {
-    const $blogCards = document.querySelectorAll(
-      "#blog-cards"
-    ) as NodeListOf<HTMLAnchorElement>;
-
-    $blogCards.forEach((card) => {
-      if (card.dataset.category !== category && category !== "all") {
-        card.style.display = "none";
-      } else {
-        card.style.display = "block";
-      }
-    });
-  };
+  import { handleOnSelectChange } from "../../scripts/blogFilters.ts";
 
   handleOnSelectChange();
 
