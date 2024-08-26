@@ -1,0 +1,35 @@
+---
+import Layout from "./Layout.astro";
+import ProductHero from "../components/ProductHero.astro";
+import type { MarkdownLayoutProps } from "astro";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  author: string;
+  date: string;
+  tags: string[];
+}>;
+
+const { frontmatter } = Astro.props;
+
+const titlePage = `${frontmatter.title} - Bohemian - Coffee & Breads`;
+---
+
+<style>
+  body {
+    background-color: #dadacf;
+  }
+</style>
+
+<Layout title={titlePage}>
+  <ProductHero title={frontmatter.title} />
+  <article
+    class="prose container mx-auto bg-secondary-500 md:max-w-3xl lg:max-w-4xl xl:max-w-5xl p-4 md:p-8 lg:p-12 xl:p-16 rounded-md shadow-lg shadow-black my-4 border border-primary-400 font-oswald md:prose-lg lg:prose-xl xl:prose-2xl text-white prose-h2:text-primary-600 prose-h1:text-primary-400 prose-h3:text-primary-400 prose-h4:text-primary-400 prose-h5:text-primary-400 prose-h6:text-primary-400 prose-strong:text-primary-400"
+  >
+    <p class="text-sm">
+      Publicado por <span class="font-bold">{frontmatter.author}</span>
+    </p>
+    <p class="text-sm">Fecha de publicación: {frontmatter.date}</p>
+    <slot />
+  </article>
+</Layout>
