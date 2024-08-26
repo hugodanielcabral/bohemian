@@ -1,17 +1,27 @@
 ---
 interface Props {
   title: string;
+  imgSrc: string;
 }
 
-const { title } = Astro.props;
+const { title, imgSrc } = Astro.props;
 ---
 
 <div
-  class="flex flex-row justify-center items-center bg-secondary-500 py-12 md:py-20 wrapper gap-4"
+  class="flex flex-row justify-center items-center bg-secondary-500 py-12 md:py-20 wrapper relative gap-4 h-60 md:h-72 lg:h-96"
 >
   <h1
-    class="text-primary-600 text-3xl md:text-6xl lg:text-7xl uppercase mt-0 text-center"
+    class="text-primary-600 text-3xl md:text-6xl lg:text-7xl uppercase mt-0 text-center z-10"
   >
     {title}
   </h1>
+  {
+    imgSrc && (
+      <img
+        src={imgSrc}
+        alt={`${title} hero`}
+        class="absolute object-cover h-full w-full top-0 left-0 z-0 opacity-25 pointer-events-none"
+      />
+    )
+  }
 </div>
