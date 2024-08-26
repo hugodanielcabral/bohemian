@@ -19,19 +19,28 @@ const links = [
 </header>
 
 <script>
-  let $wrapper = document.querySelector(".wrapper") as HTMLElement;
-  let $header = document.querySelector(".header") as HTMLElement;
+  const handleHeaderChange = () => {
+    let $wrapper = document.querySelector(".wrapper") as HTMLElement;
+    let $header = document.querySelector(".header") as HTMLElement;
 
-  let observerOptions = {
-    root: null,
-    threshold: 0.9,
+    let observerOptions = {
+      root: null,
+      threshold: 0.9,
+    };
+
+    if (!$wrapper || !$header) return;
+
+    let observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        $header?.classList.toggle("header-scrolled", !entry.isIntersecting);
+      });
+    }, observerOptions);
+
+    observer.observe($wrapper);
   };
+  handleHeaderChange();
 
-  let observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      $header?.classList.toggle("header-scrolled", !entry.isIntersecting);
-    });
-  }, observerOptions);
-
-  observer.observe($wrapper);
+  document.addEventListener("astro:after-swap", () => {
+    handleHeaderChange();
+  });
 </script>
