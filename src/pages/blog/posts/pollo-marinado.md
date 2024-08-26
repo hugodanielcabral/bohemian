@@ -4,6 +4,8 @@ title: "Pollo Marinado con Yogurt Griego"
 author: "Daniel Cabral"
 date: "23/08/2024"
 tags: ["recetas", "yogurt"]
+short_description: "Receta deliciosa de pollo marinado con yogurt griego. Saludable y sabrosa."
+category: "recipe"
 ---
 
 # Pollo Marinado con Yogurt Griego

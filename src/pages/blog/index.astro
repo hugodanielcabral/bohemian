@@ -1,9 +1,98 @@
 ---
+import BlogCard from "../../components/BlogCard.astro";
+import BlogSelect from "../../components/BlogSelect.astro";
+import ProductHero from "../../components/ProductHero.astro";
 import Layout from "../../layouts/Layout.astro";
 
+interface Frontmatter {
+  layout: string;
+  title: string;
+  author: string;
+  date: string;
+  tags: string[];
+  short_description: string;
+  category: string;
+}
+
+const blogCategories = [
+  {
+    value: "all",
+    label: "Todas las categorías",
+  },
+  {
+    value: "recipe",
+    label: "Recetas",
+  },
+  {
+    value: "news",
+    label: "Noticias",
+  },
+  {
+    value: "tips",
+    label: "Consejos",
+  },
+];
+const posts = await Astro.glob<Frontmatter>("./posts/*.md");
 const pageTitle = "Blog - Bohemian - Coffee & Breads";
 ---
 
 <Layout title={pageTitle}>
-  <h1>Blog</h1>
+  <ProductHero title="Blog" />
+  <section class="bg-primary-500 p-4">
+    <h2
+      class="text-center text-lg md:text-2xl lg:text-3xl xl:text-4xl font-oswald text-secondary-500 col-span-full"
+    >
+      Últimas recetas y publicaciones
+    </h2>
+    <BlogSelect>
+      {
+        blogCategories.map((category) => (
+          <option value={category.value}>{category.label}</option>
+        ))
+      }
+    </BlogSelect>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:md:grid-cols-3 gap-4 p-4"
+    >
+      {
+        posts.map((post) => (
+          <BlogCard url={post.url} frontmatter={post.frontmatter} />
+        ))
+      }
+    </div>
+  </section>
 </Layout>
+
+<script>
+  const handleOnSelectChange = () => {
+    const $categorySelect = document.getElementById(
+      "blog-category"
+    ) as HTMLSelectElement;
+
+    $categorySelect?.addEventListener("change", (e: Event) => {
+      const selectedCategory = (e.target as HTMLSelectElement).value;
+
+      filterByCategory(selectedCategory);
+    });
+  };
+
+  const filterByCategory = (category: string) => {
+    const $blogCards = document.querySelectorAll(
+      "#blog-cards"
+    ) as NodeListOf<HTMLAnchorElement>;
+
+    $blogCards.forEach((card) => {
+      if (card.dataset.category !== category && category !== "all") {
+        card.style.display = "none";
+      } else {
+        card.style.display = "block";
+      }
+    });
+  };
+
+  handleOnSelectChange();
+
+  document.addEventListener("astro:after-swap", () => {
+    handleOnSelectChange();
+  });
+</script>
