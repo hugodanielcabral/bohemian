@@ -1,11 +1,27 @@
 ---
+import { Icon } from "astro-icon/components";
 
+const carouselData = [
+  {
+    id: 1,
+    image:
+      "bg-[url('https://images.unsplash.com/photo-1447078806655-40579c2520d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]",
+    title: "Sano y delicioso",
+    description: "Tu pan preferido siempre cerca",
+  },
+  {
+    id: 2,
+    image: "bg-[url('/img/yogurt-ideas.jpg')]",
+    title: "Fresco y natural",
+    description: "El yogurt te da la energía que necesitas",
+  },
+];
 ---
 
 <style>
   .slider-container {
     position: relative;
-    height: 50vh;
+    height: 60vh;
   }
 
   .slider {
@@ -18,9 +34,8 @@
   .slide {
     flex: 0 0 auto;
     width: 100%;
-    object-fit: cover;
     border-image: fill 1
-      linear-gradient(hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0.7));
+      linear-gradient(hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0.5));
   }
 
   .button {
@@ -40,75 +55,88 @@
   #prev {
     left: 10px;
   }
+
+  @media (width >= 640px) {
+    .slider-container {
+      position: relative;
+      height: 70vh;
+    }
+  }
+
+  @media (width >= 768px) {
+    .slider-container {
+      height: 80vh;
+    }
+  }
+
+  @media (width >= 1024px) {
+    .slider-container {
+      height: 100vh;
+    }
+  }
 </style>
 
-<div class="slider-container wrapper">
+<section class="slider-container wrapper">
   <div class="slider">
-    <div
-      class="slide bg-[url('/img/hero-1.webp')] flex items-center justify-center"
-    >
-      <h1
-        class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white"
-      >
-        Tu <span class="font-bold text-primary-400">pan</span> preferido <br />
-        <span class="italic">siempre cerca</span>
-      </h1>
-    </div>
-    <div
-      class="slide bg-[url('/img/hero-2.webp')] flex items-center justify-center"
-    >
-      <h1
-        class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white"
-      >
-        Tu <span class="font-bold text-primary-400">yogurt</span> preferido <br
-        />
-        <span class="italic">siempre cerca</span>
-      </h1>
-    </div>
-    <button class="button size-14 sm:size-16 md:size-20" id="next"
-      ><img
-        src="/img/right-arrow.webp"
-        alt="Botón derecho del Carrusel"
-      /></button
-    >
-    <button class="button size-14 sm:size-16 md:size-20" id="prev"
-      ><img
-        src="/img/left-arrow.webp"
-        alt="Botón izquierdo del Carrusel"
-      /></button
-    >
+    {
+      carouselData.map((item) => (
+        <article
+          class={`slide ${item.image} flex flex-col justify-center items-center`}
+        >
+          <header>
+            <p class="uppercase text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-pretty text-secondary-500 font-bold">
+              {item.title}
+            </p>
+          </header>
+          <h1 class="text-lg sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-pretty text-white">
+            {item.description}
+          </h1>
+        </article>
+      ))
+    }
+
+    <Icon
+      name="right-arrow"
+      class="button size-11 sm:size-14 md:size-20"
+      id="next"
+    />
+    <Icon
+      name="left-arrow"
+      class="button size-11 sm:size-14 md:size-20"
+      id="prev"
+    />
   </div>
+</section>
 
-  <script>
-    const $slider = document.querySelector(".slider") as HTMLElement;
-    const $slides = document.querySelectorAll(
-      ".slide"
-    ) as NodeListOf<HTMLElement>;
-    const $nextButton = document.getElementById("next") as HTMLElement;
-    const $prevButton = document.getElementById("prev") as HTMLElement;
+<script>
+  const $slider = document.querySelector(".slider") as HTMLElement;
+  const $slides = document.querySelectorAll(
+    ".slide"
+  ) as NodeListOf<HTMLElement>;
+  const $nextButton = document.getElementById("next") as HTMLElement;
+  const $prevButton = document.getElementById("prev") as HTMLElement;
 
-    let currentIndex = 0;
+  let currentIndex = 0;
 
-    const updateSliderPosition = (direction: number) => {
-      const currentImgWidth = $slides[0].clientWidth;
-      $slider.scrollBy({
-        left: direction * currentImgWidth,
-        behavior: "smooth",
-      });
-    };
-
-    $nextButton.addEventListener("click", () => {
-      if (currentIndex < $slides.length - 1) {
-        currentIndex++;
-        updateSliderPosition(1);
-      }
+  const updateSliderPosition = (direction: number) => {
+    const currentImgWidth = $slides[0].clientWidth;
+    $slider.scrollBy({
+      left: direction * currentImgWidth,
+      behavior: "smooth",
     });
+  };
 
-    $prevButton.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSliderPosition(-1);
-      }
-    });
-  </script>
-</div>
+  $nextButton.addEventListener("click", () => {
+    if (currentIndex < $slides.length - 1) {
+      currentIndex++;
+      updateSliderPosition(1);
+    }
+  });
+
+  $prevButton.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSliderPosition(-1);
+    }
+  });
+</script>
