@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+import Logo from "./Logo.astro";
+
+interface Props {
+  contact: { icon: string; title: string; text: string; href: string }[];
+}
+
+const { contact } = Astro.props;
+---
+
+<section class="header-top">
+  <ul class="header-contact">
+    {
+      contact.map((info) => (
+        <li>
+          <Icon name={info.icon} class="text-secondary-500" />
+
+          <div class="font-oswald">
+            <span>{info.title}:</span>
+            <a href={info.href}>{info.text}</a>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+  <Logo />
+</section>

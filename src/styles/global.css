@@ -1,3 +1,7 @@
+:root {
+  ---primary-color-500: #93db17;
+}
+
 @font-face {
   font-family: "Oswald";
   src: url("/fonts/Oswald-Regular.woff2") format("woff2");
@@ -45,70 +49,76 @@ body {
 .header {
   width: 100%;
   color: white;
-  padding: 1rem;
-  position: fixed;
-  z-index: 50;
-  top: 0;
-  transition: background-color ease-in-out 0.5s;
 }
 
-.navegation {
+.navigation {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.navegation-links {
+.header-top {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: white;
+
+  .header-contact {
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    div {
+      a {
+        color: #0d393c;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        color: #0d393c;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .header-logo {
+    align-self: center;
+  }
+}
+
+.navigation-links {
+  display: flex;
   align-self: center;
   flex-grow: 1;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  display: none;
+  background-color: #061827;
+  padding: 1rem;
+  width: 100%;
 }
 
-.navegation-links a {
+.navigation-links a {
   display: block;
-  color: #c4c49a;
+  color: white;
   text-decoration: none;
 }
 
-.navegation-links a:hover,
-.navegation-links a:focus {
-  text-decoration: underline;
-  color: #beb6b6;
-}
-
-.hamburger {
-  padding-right: 20px;
-  cursor: pointer;
-}
-
-.hamburger .line {
-  display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: #c4c49a;
-}
-
-.expanded {
-  display: flex;
-}
-
-.header-scrolled {
-  background-color: #072427;
+.navigation-links a:hover,
+.navigation-links a:focus {
+  color: var(---primary-color-500);
 }
 
 @media screen and (min-width: 636px) {
-  .navegation-links {
-    align-self: center;
-    flex-grow: 1;
+  .header-top {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .hamburger {
-    display: none;
   }
 }
