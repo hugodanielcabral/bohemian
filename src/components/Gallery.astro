@@ -11,7 +11,7 @@ interface Props {
 const { screenshots } = Astro.props;
 ---
 
-<div
+<section
   class="pswp-gallery pswp-gallery--single-column grid grid-cols-2 gap-2 max-w-xl"
   id="gallery--products"
 >
@@ -27,12 +27,12 @@ const { screenshots } = Astro.props;
         <img
           src={screenshot.src}
           alt={screenshot.alt}
-          class="rounded-md border border-gray-400 shadow-md"
+          class="rounded-md border border-gray-400 shadow-md h-full w-full object-cover"
         />
       </a>
     ))
   }
-</div>
+</section>
 
 <script>
   import "../scripts/photoswipe.js";
