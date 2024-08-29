@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const socialMedia = [
   { name: "instagram", url: "https://instagram.com/" },
   { name: "whatsapp", url: "https://whatsapp.com/" },
@@ -17,10 +19,9 @@ const socialMedia = [
   {
     socialMedia.map((social) => (
       <a href={social.url}>
-        <img
-          src={`/img/${social.name}.webp`}
-          alt={social.name}
-          class="size-12 hover:scale-110 transition-transform duration-300 ease-in-out"
+        <Icon
+          name={social.name}
+          class="size-12 hover:text-secondary-500 transition-colors duration-300 ease-in-out"
         />
       </a>
     ))
