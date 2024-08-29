@@ -10,9 +10,13 @@ export interface ProductItemsProps {
       height: number;
       alt: string;
     }[];
+    price: number;
     info: {
-      title: string;
-      description: string;
-    }[];
+      weight: {
+        value: number;
+        unit: string;
+      };
+      ingredients: string[];
+    }
   }
 

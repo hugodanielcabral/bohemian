@@ -27,16 +27,11 @@ const productItems = [
     ],
     description:
       "Nuestro pan de campo es elaborado con ingredientes de primera calidad, siguiendo la receta tradicional de nuestros abuelos. Es un pan de miga suave y corteza crujiente, ideal para acompañar tus comidas o para disfrutar con un buen mate.",
-    info: [
-      {
-        title: "Peso",
-        description: "500 gramos",
-      },
-      {
-        title: "Precio",
-        description: "$3700",
-      },
-    ],
+    price: 3000,
+    info: {
+      weight: { value: 500, unit: "g" },
+      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+    },
   },
   {
     id: 2,
@@ -60,16 +55,11 @@ const productItems = [
     ],
     description:
       "El pan de semillas es un pan de miga suave y corteza crujiente, ideal para acompañar tus comidas o para disfrutar con un buen mate. Está elaborado con semillas de chía, lino y sésamo, que le aportan un sabor y textura únicos.",
-    info: [
-      {
-        title: "Peso",
-        description: "500 gramos",
-      },
-      {
-        title: "Precio",
-        description: "$3700",
-      },
-    ],
+    price: 3000,
+    info: {
+      weight: { value: 500, unit: "g" },
+      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+    },
   },
   {
     id: 3,
@@ -93,16 +83,11 @@ const productItems = [
     ],
     description:
       "Nuestro yogurt griego es elaborado con leche fresca de vaca y fermentos lácticos naturales. Es un producto 100% natural, sin conservantes ni aditivos. Es cremoso y suave, con un sabor delicado y ligeramente ácido.",
-    info: [
-      {
-        title: "Peso",
-        description: "1 kg",
-      },
-      {
-        title: "Precio",
-        description: "$4000",
-      },
-    ],
+    price: 3000,
+    info: {
+      weight: { value: 500, unit: "g" },
+      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+    },
   },
   {
     id: 4,
@@ -125,22 +110,17 @@ const productItems = [
       },
     ],
     description:
-      "Nuestro yogurt griego es elaborado con leche fresca de vaca y fermentos lácticos naturales. Es un producto 100% natural, sin conservantes ni aditivos. Es cremoso y suave, con un sabor delicado y ligeramente ácido.",
-    info: [
-      {
-        title: "Peso",
-        description: "1 kg",
-      },
-      {
-        title: "Precio",
-        description: "$4000",
-      },
-    ],
+      "Nuestro budín de limón es elaborado con ingredientes frescos y naturales. Es un producto 100% artesanal, sin conservantes ni aditivos. Es suave y esponjoso, con un sabor delicado y ligeramente ácido.",
+    price: 4000,
+    info: {
+      weight: { value: 500, unit: "g" },
+      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+    },
   },
   {
-    id: 4,
+    id: 5,
     category: "budines",
-    productName: "budin de zanaoria",
+    productName: "budin de zanahoria",
     title: "Budín de Zanahoria",
     hero: "/img/budin-hero.webp",
     screenshots: [
@@ -158,20 +138,15 @@ const productItems = [
       },
     ],
     description:
-      "Nuestro yogurt griego es elaborado con leche fresca de vaca y fermentos lácticos naturales. Es un producto 100% natural, sin conservantes ni aditivos. Es cremoso y suave, con un sabor delicado y ligeramente ácido.",
-    info: [
-      {
-        title: "Peso",
-        description: "1 kg",
-      },
-      {
-        title: "Precio",
-        description: "$4000",
-      },
-    ],
-  }
-  ,{
-    id: 4,
+      "Nuestro budín de zanahoria es elaborado con ingredientes frescos y naturales. Es un producto 100% artesanal, sin conservantes ni aditivos. Es suave y esponjoso, con un sabor delicado y ligeramente dulce.",
+    price: 3000,
+    info: {
+      weight: { value: 500, unit: "g" },
+      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+    },
+  },
+  {
+    id: 6,
     category: "budines",
     productName: "budin de naranja",
     title: "Budín de Naranja",
@@ -191,18 +166,13 @@ const productItems = [
       },
     ],
     description:
-      "Nuestro yogurt griego es elaborado con leche fresca de vaca y fermentos lácticos naturales. Es un producto 100% natural, sin conservantes ni aditivos. Es cremoso y suave, con un sabor delicado y ligeramente ácido.",
-    info: [
-      {
-        title: "Peso",
-        description: "1 kg",
-      },
-      {
-        title: "Precio",
-        description: "$4000",
-      },
-    ],
-  }
+      "Nuestro budín de naranja es elaborado con ingredientes frescos y naturales. Es un producto 100% artesanal, sin conservantes ni aditivos. Es suave y esponjoso, con un sabor delicado y ligeramente dulce.",
+    price: 3000,
+    info: {
+      weight: { value: 500, unit: "g" },
+      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+    },
+  },
 ];
 
 export default productItems;
