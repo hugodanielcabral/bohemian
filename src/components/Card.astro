@@ -2,25 +2,44 @@
 interface Props {
   imgSrc: string;
   title: string;
+  productName: string;
+  price: string;
 }
 
-const { imgSrc, title } = Astro.props;
+const { imgSrc, title, productName, price } = Astro.props;
 ---
 
-<div
-  class="bg-primary-400 rounded-md w-28 h-32 lg:w-52 lg:h-56 xl:w-60 xl:h-64 relative place-content-center space-y-2"
+<style>
+  .card > * {
+    transition: all 0.3s;
+  }
+
+  .card:hover > * {
+    transform: translateY(-20px);
+  }
+</style>
+
+<a
+  href={`/products/${productName}`}
+  class="card relative place-content-center h-[350px] md:h-[450px] border-r flex flex-col gap-12 hover:bg-secondary-600 transition-colors duration-300 ease-in-out group flex-1 basis-64 flex-shrink-0"
 >
   <img
     src={imgSrc}
     alt={title}
     width="300px"
     height="350px"
-    class="h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out border-2 border-primary-500 shadow-md shadow-black rounded-md"
+    class="card-image shadow-md shadow-black w-[70%] mx-auto"
   />
 
   <h3
-    class="text-secondary-500 text-xs sm:text-sm md:text-base lg:text-xl text-pretty text-center xl:text-2xl font-oswald"
+    class="text-secondary-600 text-sm md:text-base lg:text-lg text-pretty text-center font-oswald group-hover:text-secondary-500 group"
+  >
+    Desde
+    {price}
+  </h3>
+  <h3
+    class="text-black text-base md:text-lg lg:text-xl text-pretty text-center font-oswald group-hover:text-white group font-medium"
   >
     {title}
   </h3>
-</div>
+</a>

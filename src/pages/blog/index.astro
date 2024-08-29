@@ -1,19 +1,9 @@
 ---
-import type { GetStaticPaths } from "astro";
 import BlogCard from "../../components/BlogCard.astro";
 import BlogSelect from "../../components/BlogSelect.astro";
 import ProductHero from "../../components/ProductHero.astro";
 import Layout from "../../layouts/Layout.astro";
-
-interface Frontmatter {
-  layout: string;
-  title: string;
-  author: string;
-  date: string;
-  tags: string[];
-  short_description: string;
-  category: string;
-}
+import type { Frontmatter } from "../../types/blogArticles";
 
 const blogCategories = [
   {
