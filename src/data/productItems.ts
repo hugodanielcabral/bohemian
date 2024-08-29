@@ -104,6 +104,105 @@ const productItems = [
       },
     ],
   },
+  {
+    id: 4,
+    category: "budines",
+    productName: "budin de limon",
+    title: "Budín de Limón",
+    hero: "/img/budin-hero.webp",
+    screenshots: [
+      {
+        src: "/img/hero-1.webp",
+        width: 1600,
+        height: 900,
+        alt: "Pan de campo",
+      },
+      {
+        src: "/img/hero-2.webp",
+        width: 1920,
+        height: 1281,
+        alt: "Pan de campo",
+      },
+    ],
+    description:
+      "Nuestro yogurt griego es elaborado con leche fresca de vaca y fermentos lácticos naturales. Es un producto 100% natural, sin conservantes ni aditivos. Es cremoso y suave, con un sabor delicado y ligeramente ácido.",
+    info: [
+      {
+        title: "Peso",
+        description: "1 kg",
+      },
+      {
+        title: "Precio",
+        description: "$4000",
+      },
+    ],
+  },
+  {
+    id: 4,
+    category: "budines",
+    productName: "budin de zanaoria",
+    title: "Budín de Zanahoria",
+    hero: "/img/budin-hero.webp",
+    screenshots: [
+      {
+        src: "/img/hero-1.webp",
+        width: 1600,
+        height: 900,
+        alt: "Pan de campo",
+      },
+      {
+        src: "/img/hero-2.webp",
+        width: 1920,
+        height: 1281,
+        alt: "Pan de campo",
+      },
+    ],
+    description:
+      "Nuestro yogurt griego es elaborado con leche fresca de vaca y fermentos lácticos naturales. Es un producto 100% natural, sin conservantes ni aditivos. Es cremoso y suave, con un sabor delicado y ligeramente ácido.",
+    info: [
+      {
+        title: "Peso",
+        description: "1 kg",
+      },
+      {
+        title: "Precio",
+        description: "$4000",
+      },
+    ],
+  }
+  ,{
+    id: 4,
+    category: "budines",
+    productName: "budin de naranja",
+    title: "Budín de Naranja",
+    hero: "/img/budin-hero.webp",
+    screenshots: [
+      {
+        src: "/img/hero-1.webp",
+        width: 1600,
+        height: 900,
+        alt: "Pan de campo",
+      },
+      {
+        src: "/img/hero-2.webp",
+        width: 1920,
+        height: 1281,
+        alt: "Pan de campo",
+      },
+    ],
+    description:
+      "Nuestro yogurt griego es elaborado con leche fresca de vaca y fermentos lácticos naturales. Es un producto 100% natural, sin conservantes ni aditivos. Es cremoso y suave, con un sabor delicado y ligeramente ácido.",
+    info: [
+      {
+        title: "Peso",
+        description: "1 kg",
+      },
+      {
+        title: "Precio",
+        description: "$4000",
+      },
+    ],
+  }
 ];
 
 export default productItems;

@@ -1,23 +1,17 @@
 ---
 import Card from "./Card.astro";
-import Divider from "./Divider.astro";
 import productItems from "../data/productItems";
 ---
 
-<section
-  class="bg-secondary-500 min-h-72 flex flex-col items-center gap-y-4 p-4 pb-10 overflow-auto mb-4"
->
-  <h3 class="mt-5 uppercase text-lg md:text-xl lg:text-2xl xl:text-3xl">
-    Nuestros productos 🔥
-  </h3>
-  <Divider dividerBackground="#c4c49a" />
-  <div class="flex gap-4">
-    {
-      productItems.map((product) => (
-        <a href={`/products/${product.productName}`}>
-          <Card title={product.title} imgSrc={product.screenshots[0].src} />
-        </a>
-      ))
-    }
-  </div>
+<section class="bg-white flex flex-row items-center gap-y-4 overflow-auto">
+  {
+    productItems.map((product) => (
+      <Card
+        title={product.title}
+        imgSrc={product.screenshots[0].src}
+        productName={product.productName}
+        price={product.info[1].description}
+      />
+    ))
+  }
 </section>
