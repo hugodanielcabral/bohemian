@@ -30,12 +30,7 @@ const pageTitle = "Blog - Bohemian - Coffee & Breads";
 
 <Layout title={pageTitle}>
   <ProductHero title="Blog" imgSrc="/img/blog-hero.webp" />
-  <section class="bg-primary-500 p-4 min-h-[800px]">
-    <h2
-      class="text-center text-lg md:text-2xl lg:text-3xl xl:text-4xl font-oswald text-secondary-500 col-span-full"
-    >
-      Últimas recetas y publicaciones
-    </h2>
+  <section class="bg-white p-4 min-h-[800px]">
     <BlogSelect>
       {
         blogCategories.map((category) => (
