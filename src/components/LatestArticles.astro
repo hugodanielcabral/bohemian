@@ -1,0 +1,49 @@
+---
+import type { Frontmatter } from "../types/blogArticles";
+const posts = await Astro.glob<Frontmatter>("/src/pages/blog/posts/*.md");
+
+const recentPosts = posts.slice(0, 4);
+
+
+const articleData = [
+  {
+    title: recentPosts[0]?.frontmatter.title,
+    cover: recentPosts[0]?.frontmatter.cover,
+    class: "col-span-4 md:col-span-2 row-start-1 row-end-8",
+    url: recentPosts[0]?.url,
+  },
+  {
+    title: recentPosts[1]?.frontmatter.title,
+    cover: recentPosts[1]?.frontmatter.cover,
+    class: "col-span-4 md:col-span-1",
+    url: recentPosts[1]?.url,
+  },
+  {
+    title: recentPosts[2]?.frontmatter.title,
+    cover: recentPosts[2]?.frontmatter.cover,
+    class: "col-span-4 md:col-span-1",
+    url: recentPosts[2]?.url,
+  },
+  {
+    title: recentPosts[3]?.frontmatter.title,
+    cover: recentPosts[3]?.frontmatter.cover,
+    class: "col-span-4 md:col-span-2",
+    url: recentPosts[3]?.url,
+  },
+];
+---
+
+<section class="bg-black grid grid-cols-4 grid-row-12">
+  {
+    articleData.length > 0 && articleData.map((post) => (
+      <a href={post.url} class=`relative group ${post.class} border border-black`>
+        <img src={post.cover} alt="" class="h-full object-cover group-hover:opacity-50 transition-all duration-300 ease-in-out" />
+        <h3 class="absolute group-hover:block text-secondary-500 text-2xl font-bold p-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden text-pretty uppercase font-oswald">
+            {post.title}
+        </h3>
+      </a>
+    ))
+  }
+
+  
+</section>
