@@ -1,52 +1,30 @@
 ---
-import Card from "../../components/Card.astro";
-import Divider from "../../components/Divider.astro";
 import ProductHero from "../../components/ProductHero.astro";
 import productItems from "../../data/productItems";
+import ProductCard from "../../components/ProductCard.astro";
 import Layout from "../../layouts/Layout.astro";
 const pageTitle = "Productos";
-const dividerBackground = "#0d393c";
 ---
 
 <Layout title={pageTitle}>
-  <ProductHero title="Nuestros productos" />
-  <div class="space-y-8 p-4 min-h-screen bg-primary-500">
-    <div
-      class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-y-2"
+  <ProductHero
+    title="Nuestros productos"
+    imgSrc="https://images.unsplash.com/photo-1504469288085-feb62ad2903d"
+  />
+  <section class="space-y-8 p-4 min-h-screen bg-white">
+    <article
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
     >
-      <h2
-        class="font-oswald text-xl text-secondary-500 text-center uppercase col-span-full md:text-2xl lg:text-3xl xl:text-4xl"
-      >
-        Panes
-      </h2>
       {
-        productItems
-          .filter((product) => product.category === "panes")
-          .map((product) => (
-            <a href={`/products/${product.productName}`}>
-              <Card title={product.title} imgSrc={product.screenshots[0].src} />
-            </a>
-          ))
+        productItems.map((product) => (
+          <ProductCard
+            title={product.title}
+            imgSrc={product.screenshots[0].src}
+            productName={product.productName}
+            price={product.price}
+          />
+        ))
       }
-    </div>
-    <Divider dividerBackground={dividerBackground} />
-    <div
-      class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-y-2"
-    >
-      <h2
-        class="font-oswald text-xl text-secondary-500 text-center uppercase col-span-full md:text-2xl lg:text-3xl xl:text-4xl"
-      >
-        Yogures
-      </h2>
-      {
-        productItems
-          .filter((product) => product.category === "yogures")
-          .map((product) => (
-            <a href={`/products/${product.productName}`}>
-              <Card title={product.title} imgSrc={product.screenshots[0].src} />
-            </a>
-          ))
-      }
-    </div>
-  </div>
+    </article>
+  </section>
 </Layout>
