@@ -1,6 +1,5 @@
 ---
 import Layout from "./Layout.astro";
-import ProductHero from "../components/ProductHero.astro";
 import type { MarkdownLayoutProps } from "astro";
 
 type Props = MarkdownLayoutProps<{
@@ -9,6 +8,8 @@ type Props = MarkdownLayoutProps<{
   date: string;
   tags: string[];
   short_description: string;
+  category: string;
+  cover: string;
 }>;
 
 const { frontmatter } = Astro.props;

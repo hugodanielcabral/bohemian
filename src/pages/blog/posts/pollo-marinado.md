@@ -6,7 +6,7 @@ date: "23/08/2024"
 tags: ["recetas", "yogurt"]
 short_description: "Receta deliciosa de pollo marinado con yogurt griego. Saludable y sabrosa."
 category: "recipe"
-cover: "https://images.unsplash.com/photo-1464454709131-ffd692591ee5"
+cover: "/img/pollo-marinado-post.webp"
 ---
 
 # Pollo Marinado con Yogurt Griego
