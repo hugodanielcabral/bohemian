@@ -11,7 +11,7 @@ const { imgSrc, title, productName, price } = Astro.props;
 
 <a
   href={`/products/${productName}`}
-  class="relative place-content-center h-[350px] md:h-[450px] border flex flex-col group flex-1 basis-44 md:basis-48 lg:basis-52 xl:basis-56 flex-shrink-0 rounded-md"
+  class="relative place-content-center h-[350px] md:h-[450px] border flex flex-col group flex-1 basis-36 sm:basis-44 md:basis-48 lg:basis-52 xl:basis-56 flex-shrink-0 rounded-md"
 >
   <div
     class="bg-secondary-500 h-full absolute w-[100%] -z-0 group-hover:rotate-2 transition duration-300 ease-in-out rounded-md"
@@ -25,7 +25,7 @@ const { imgSrc, title, productName, price } = Astro.props;
       alt={title}
       width="300px"
       height="350px"
-      class="shadow-md shadow-black mx-auto w-[70%] rounded-md"
+      class="shadow-md shadow-black mx-auto w-[60%] sm:w-[70%] rounded-md h-[50%]"
     />
     <h3
       class="text-black text-lg md:text-xl lg:text-2xl text-pretty text-center font-oswald font-medium"

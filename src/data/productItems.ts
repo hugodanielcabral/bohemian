@@ -5,25 +5,15 @@ const productItems = [
     productName: "pan de campo",
     title: "Pan de Campo",
     hero: "/img/pan-hero.webp",
+    thumbnail: "/img/pan-de-campo-thumbnail.webp",
     screenshots: [
       {
-        src: "/img/hero-1.webp",
-        width: 1600,
-        height: 900,
-        alt: "Pan de campo",
-      },
-      {
-        src: "/img/hero-2.webp",
+        src: "/img/pan-de-campo-screenshot-1.webp",
         width: 1920,
-        height: 1281,
-        alt: "Pan de campo",
+        height: 1080,
+        alt: "Pan de campo 1",
       },
-      {
-        src: "/img/hero-1.webp",
-        width: 1600,
-        height: 900,
-        alt: "Pan de campo",
-      },
+     
     ],
     description:
       "Nuestro pan de campo es elaborado con ingredientes de primera calidad, siguiendo la receta tradicional de nuestros abuelos. Es un pan de miga suave y corteza crujiente, ideal para acompañar tus comidas o para disfrutar con un buen mate.",
@@ -38,19 +28,20 @@ const productItems = [
     category: "panes",
     productName: "pan de semillas",
     title: "Pan de Semillas",
+    thumbnail: "/img/pan-de-semillas-thumbnail.webp",
     hero: "/img/pan-hero.webp",
     screenshots: [
       {
-        src: "/img/hero-1.webp",
-        width: 1600,
-        height: 900,
-        alt: "Pan de campo",
+        src: "/img/pan-de-semillas-screenshot-1.webp",
+        width: 1280,
+        height: 1280,
+        alt: "Pan de semillas 1",
       },
       {
-        src: "/img/hero-2.webp",
-        width: 1920,
-        height: 1281,
-        alt: "Pan de campo",
+        src: "/img/pan-de-semillas-screenshot-2.webp",
+        width: 1280,
+        height: 1280,
+        alt: "Pan de semillas 2",
       },
     ],
     description:
@@ -67,18 +58,19 @@ const productItems = [
     productName: "yogurt griego",
     title: "Yogurt Griego",
     hero: "/img/yogurt-hero.png",
+    thumbnail: "/img/yogurt-griego-thumbnail.webp",
     screenshots: [
       {
-        src: "/img/hero-1.webp",
-        width: 1600,
-        height: 900,
-        alt: "Pan de campo",
+        src: "/img/yogurt-griego-screenshot-1.jpeg",
+        width: 1280,
+        height: 1280,
+        alt: "Yogurt griego 1",
       },
       {
-        src: "/img/hero-2.webp",
-        width: 1920,
-        height: 1281,
-        alt: "Pan de campo",
+        src: "/img/yogurt-griego-screenshot-2.jpeg",
+        width: 1280,
+        height: 1280,
+        alt: "Yogurt griego 2",
       },
     ],
     description:
@@ -95,18 +87,13 @@ const productItems = [
     productName: "budin de limon",
     title: "Budín de Limón",
     hero: "/img/budin-hero.webp",
+    thumbnail: "/img/budin-de-limon-thumbnail.webp",
     screenshots: [
       {
-        src: "/img/hero-1.webp",
-        width: 1600,
-        height: 900,
-        alt: "Pan de campo",
-      },
-      {
-        src: "/img/hero-2.webp",
-        width: 1920,
-        height: 1281,
-        alt: "Pan de campo",
+        src: "/img/budin-de-limon-screenshot-1.webp",
+        width: 2190,
+        height: 1461,
+        alt: "Budín de limón",
       },
     ],
     description:
@@ -123,18 +110,13 @@ const productItems = [
     productName: "budin de zanahoria",
     title: "Budín de Zanahoria",
     hero: "/img/budin-hero.webp",
+    thumbnail: "/img/budin-de-zanahoria-thumbnail.webp",
     screenshots: [
       {
-        src: "/img/hero-1.webp",
-        width: 1600,
-        height: 900,
-        alt: "Pan de campo",
-      },
-      {
-        src: "/img/hero-2.webp",
-        width: 1920,
-        height: 1281,
-        alt: "Pan de campo",
+        src: "/img/budin-de-zanahoria-screenshot-1.webp",
+        width: 1000,
+        height: 1000,
+        alt: "Budín de zanahoria 1",
       },
     ],
     description:
@@ -151,19 +133,15 @@ const productItems = [
     productName: "budin de naranja",
     title: "Budín de Naranja",
     hero: "/img/budin-hero.webp",
+    thumbnail: "/img/budin-de-naranja-thumbnail.webp",
     screenshots: [
       {
-        src: "/img/hero-1.webp",
-        width: 1600,
-        height: 900,
-        alt: "Pan de campo",
+        src: "/img/budin-de-naranja-screenshot-1.webp",
+        width: 1502,
+        height: 1064,
+        alt: "Budín de naranja 1",
       },
-      {
-        src: "/img/hero-2.webp",
-        width: 1920,
-        height: 1281,
-        alt: "Pan de campo",
-      },
+      
     ],
     description:
       "Nuestro budín de naranja es elaborado con ingredientes frescos y naturales. Es un producto 100% artesanal, sin conservantes ni aditivos. Es suave y esponjoso, con un sabor delicado y ligeramente dulce.",
