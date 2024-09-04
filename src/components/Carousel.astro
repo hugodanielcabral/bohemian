@@ -109,34 +109,48 @@ const carouselData = [
 </section>
 
 <script>
-  const $slider = document.querySelector(".slider") as HTMLElement;
-  const $slides = document.querySelectorAll(
-    ".slide"
-  ) as NodeListOf<HTMLElement>;
-  const $nextButton = document.getElementById("next") as HTMLElement;
-  const $prevButton = document.getElementById("prev") as HTMLElement;
+  const startSlider = () => {
+    const $slider = document.querySelector(".slider") as HTMLElement;
+    const $slides = document.querySelectorAll(
+      ".slide"
+    ) as NodeListOf<HTMLElement>;
+    const $nextButton = document.getElementById("next") as HTMLElement;
+    const $prevButton = document.getElementById("prev") as HTMLElement;
 
-  let currentIndex = 0;
+    let currentIndex = 0;
 
-  const updateSliderPosition = (direction: number) => {
-    const currentImgWidth = $slides[0].clientWidth;
-    $slider.scrollBy({
-      left: direction * currentImgWidth,
-      behavior: "smooth",
+    const updateSliderPosition = (direction: number) => {
+      const currentImgWidth = $slides[0].clientWidth;
+      $slider.scrollBy({
+        left: direction * currentImgWidth,
+        behavior: "smooth",
+      });
+    };
+
+    $nextButton.addEventListener("click", () => {
+      if (currentIndex < $slides.length - 1) {
+        currentIndex++;
+        updateSliderPosition(1);
+      } else {
+        currentIndex = 0;
+        $slider.scrollTo({ left: 0, behavior: "smooth" });
+      }
+    });
+
+    $prevButton.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSliderPosition(-1);
+      } else {
+        currentIndex = $slides.length - 1;
+        $slider.scrollTo({
+          left: $slides[currentIndex].clientWidth * currentIndex,
+          behavior: "smooth",
+        });
+      }
     });
   };
 
-  $nextButton.addEventListener("click", () => {
-    if (currentIndex < $slides.length - 1) {
-      currentIndex++;
-      updateSliderPosition(1);
-    }
-  });
-
-  $prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSliderPosition(-1);
-    }
-  });
+  document.addEventListener("astro:after-swap", startSlider);
+  startSlider();
 </script>
