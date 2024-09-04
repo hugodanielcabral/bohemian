@@ -34,11 +34,12 @@ const articleData = [
 ---
 
 <section class="bg-black grid grid-cols-2 md:max-h-[600px]">
+  <h3 class="col-span-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl p-8 text-center">Conoce recetas y tips! 📖</h3>
   {
     articleData.length > 0 && articleData.map((post) => (
-      <a href={post.url} class=`relative group ${post.class} border border-black max-h-[200px] md:max-h-[500px] text-lg first:md:text-2xl last:md:text-2xl md:text-base`>
-        <img src={post.cover} alt={post.title} class="h-full w-full object-cover group-hover:opacity-50 transition-all duration-300 ease-in-out" />
-        <h3 class="absolute group-hover:block text-secondary-500 font-bold p-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden text-pretty uppercase font-oswald text-center">
+      <a href={post.url} class=`relative group ${post.class} border border-black max-h-[200px] md:max-h-[500px] text-lg md:text-2xl`>
+        <img src={post.cover} alt={post.title} class="h-full w-full object-cover opacity-50 sm:opacity-100 sm:group-hover:opacity-50 transition-all duration-300 ease-in-out" />
+        <h3 class="absolute group-hover:block text-secondary-500 font-bold p-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:hidden text-pretty uppercase font-oswald text-center">
             {post.title}
         </h3>
       </a>
