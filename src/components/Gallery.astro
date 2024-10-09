@@ -12,7 +12,7 @@ const { screenshots } = Astro.props;
 ---
 
 <section
-  class="pswp-gallery pswp-gallery--single-column grid grid-cols-2 gap-2 max-w-xl"
+  class="pswp-gallery pswp-gallery--single-column grid grid-cols-2 gap-2 max-w-lg"
   id="gallery--products"
 >
   {
@@ -21,8 +21,7 @@ const { screenshots } = Astro.props;
         href={screenshot.src}
         data-pswp-width={screenshot.width}
         data-pswp-height={screenshot.height}
-        target="_blank"
-        class="first:col-span-2 hover:scale-105 transform transition-transform duration-300"
+        class="first:col-span-2 hover:scale-95 transform transition-transform duration-300"
       >
         <img
           src={screenshot.src}

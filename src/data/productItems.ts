@@ -16,11 +16,11 @@ const productItems = [
      
     ],
     description:
-      "Nuestro pan de campo es elaborado con ingredientes de primera calidad, siguiendo la receta tradicional de nuestros abuelos. Es un pan de miga suave y corteza crujiente, ideal para acompañar tus comidas o para disfrutar con un buen mate.",
-    price: 3000,
+      "Un pan rico y sabroso, con una miga suave y una corteza crujiente. Es un pan ideal para acompañar tus comidas o para disfrutar con un buen mate.",
+    price: 3500,
     info: {
-      weight: { value: 500, unit: "g" },
-      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+      weight: { value: 1, unit: "kg" },
+      ingredients: ["harina de trigo", "agua", "sal", "levadura"],
     },
   },
   {
@@ -45,11 +45,11 @@ const productItems = [
       },
     ],
     description:
-      "El pan de semillas es un pan de miga suave y corteza crujiente, ideal para acompañar tus comidas o para disfrutar con un buen mate. Está elaborado con semillas de chía, lino y sésamo, que le aportan un sabor y textura únicos.",
-    price: 3000,
+      "El pan de semillas no solamente es rico, pero también es muy saludable. Recomendamos este pan para acompañar tus comidas o para disfrutar con un buen mate.",
+    price: 3500,
     info: {
-      weight: { value: 500, unit: "g" },
-      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+      weight: { value: 1, unit: "kg" },
+      ingredients: ["harina de trigo", "azúcar", "zanahorias", "aceite", "huevos"],
     },
   },
   {
@@ -75,10 +75,10 @@ const productItems = [
     ],
     description:
       "Nuestro yogurt griego es elaborado con leche fresca de vaca y fermentos lácticos naturales. Es un producto 100% natural, sin conservantes ni aditivos. Es cremoso y suave, con un sabor delicado y ligeramente ácido.",
-    price: 3000,
+    price: 4500,
     info: {
-      weight: { value: 500, unit: "g" },
-      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+      weight: { value: 1, unit: "kg" },
+      ingredients: [],
     },
   },
   {
@@ -98,10 +98,10 @@ const productItems = [
     ],
     description:
       "Nuestro budín de limón es elaborado con ingredientes frescos y naturales. Es un producto 100% artesanal, sin conservantes ni aditivos. Es suave y esponjoso, con un sabor delicado y ligeramente ácido.",
-    price: 4000,
+    price: 3500,
     info: {
       weight: { value: 500, unit: "g" },
-      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+      ingredients: ["harina de trigo", "azúcar", "limón", "aceite", "huevos"],
     },
   },
   {
@@ -114,17 +114,17 @@ const productItems = [
     screenshots: [
       {
         src: "/img/budin-de-zanahoria-screenshot-1.webp",
-        width: 1000,
-        height: 1000,
+        width: 1600,
+        height: 1200,
         alt: "Budín de zanahoria 1",
       },
     ],
     description:
-      "Nuestro budín de zanahoria es elaborado con ingredientes frescos y naturales. Es un producto 100% artesanal, sin conservantes ni aditivos. Es suave y esponjoso, con un sabor delicado y ligeramente dulce.",
-    price: 3000,
+      "Un budín de zanahoria es un postre delicioso y clásico. Es un bizcocho húmedo y esponjoso, con un sabor delicado y ligeramente dulce. Es perfecto para acompañar un café o un té, o para disfrutar como postre.",
+    price: 3500,
     info: {
       weight: { value: 500, unit: "g" },
-      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+      ingredients: ["harina de trigo", "azúcar", "zanahorias", "aceite", "huevos"],
     },
   },
   {
@@ -137,18 +137,24 @@ const productItems = [
     screenshots: [
       {
         src: "/img/budin-de-naranja-screenshot-1.webp",
-        width: 1502,
-        height: 1064,
+        width: 1600,
+        height: 1200,
         alt: "Budín de naranja 1",
+      },
+      {
+        src: "/img/budin-de-naranja-screenshot-2.webp",
+        width: 1600,
+        height: 1200,
+        alt: "Budín de naranja 2",
       },
       
     ],
     description:
-      "Nuestro budín de naranja es elaborado con ingredientes frescos y naturales. Es un producto 100% artesanal, sin conservantes ni aditivos. Es suave y esponjoso, con un sabor delicado y ligeramente dulce.",
-    price: 3000,
+      "¿Quién puede resistirse a un budín de naranja? Es un postre clásico y delicioso, con un sabor cítrico y refrescante.",
+    price: 3500,
     info: {
       weight: { value: 500, unit: "g" },
-      ingredients: ["harina de trigo", "agua", "sal", "levadura", "azúcar"],
+      ingredients: ["harina de trigo", "azúcar", "naranjas", "aceite", "huevos"],
     },
   },
 ];

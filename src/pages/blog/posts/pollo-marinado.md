@@ -13,7 +13,7 @@ cover: "/img/pollo-marinado-post.webp"
 
 ¡Bienvenidos a una deliciosa receta de pollo marinado con yogurt griego! Esta receta es perfecta para una comida saludable y sabrosa. El yogurt griego no solo añade un sabor increíble, sino que también ayuda a mantener el pollo jugoso y tierno.
 
-![Marinado de pollo](https://th.bing.com/th/id/R.8a377805f6c0e878cb5820b3152f0f1d?rik=mY0TFbe0XObOAQ&riu=http%3a%2f%2f4.bp.blogspot.com%2f-Fi7xSLRY0pg%2fVaadP6l8qXI%2fAAAAAAAAC-Q%2fRQiQXNaSx30%2fw1200-h630-p-k-no-nu%2f_MG_5431.JPG&ehk=B3wm6lPHQyRyh0IbvAiTnGDStYtlWq5qkCH4GHXUeac%3d&risl=&pid=ImgRaw&r=0)
+![Marinado de pollo](/public/img/marinado-pollo-griego-receta.webp)
 
 ## Ingredientes
 
