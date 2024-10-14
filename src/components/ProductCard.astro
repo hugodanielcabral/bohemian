@@ -1,4 +1,6 @@
 ---
+import { formatPrice } from "../utils/formatPrice";
+
 interface Props {
   imgSrc: string;
   title: string;
@@ -35,7 +37,7 @@ const { imgSrc, title, productName, price } = Astro.props;
     <h3
       class="text-secondary-600 text-base md:text-lg lg:text-xl text-pretty text-center font-oswald font-bold"
     >
-      ${price}
+      {formatPrice(price)}
     </h3>
   </div>
 </a>

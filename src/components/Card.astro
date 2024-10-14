@@ -1,4 +1,6 @@
 ---
+import { formatPrice } from "../utils/formatPrice.ts";
+
 interface Props {
   imgSrc: string;
   title: string;
@@ -35,7 +37,7 @@ const { imgSrc, title, productName, price } = Astro.props;
     class="text-secondary-600 text-sm md:text-base lg:text-lg text-pretty text-center font-oswald group-hover:text-secondary-500 group"
   >
     Desde
-    {price}
+    {formatPrice(price)}
   </h3>
   <h3
     class="text-black text-base md:text-lg lg:text-xl text-pretty text-center font-oswald group-hover:text-white group font-medium"
